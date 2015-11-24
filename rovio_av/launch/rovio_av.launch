@@ -4,9 +4,10 @@
 -->
 
 <launch>
-  <arg name="host" default="192.168.1.111" />
+  <arg name="host" default="192.168.0.18" />
   <arg name="user" default="admin" />
   <arg name="pass" default="r0b0ts" />
+  <arg name="wavfile" default="hello.wav" />
 
   <!-- Edit the parameters here for your Rovio -->
   <param name="/rovio_shared/host" type="string" value="$(arg host)" />
@@ -18,5 +19,6 @@
 
   <!-- Create an instance of each appropriate node -->
   <node name="rovio_audio" pkg="rovio_av" type="rovio_audio" respawn="false" output="screen" />
+  <!--node name="rovio_av_test" pkg="rovio_av" type="rovio_av_test" respawn="false" output="screen" /-->
   <node name="gscam" pkg="gscam" type="gscam" respawn="false" output="screen" />
 </launch>

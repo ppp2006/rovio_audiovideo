@@ -71,7 +71,8 @@ bool audio_controller::wav_play_callback(rovio_shared::wav_play::Request &req, r
 
   // get the file name from the request
   string f_name = req.f;
-
+ 
+  ROS_INFO("Rovio Audio req.f=%s", f_name.c_str());
   // try and open the file
   FILE *f = fopen(f_name.c_str(), "rb");
   if (f == NULL)

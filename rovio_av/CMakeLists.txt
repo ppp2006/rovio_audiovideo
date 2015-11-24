@@ -27,9 +27,12 @@ include_directories(
 
 ## Declare a cpp executable
 add_executable(rovio_audio src/rovio_audio.cpp)
-
+add_executable(rovio_av_test src/rovio_av_test.cpp)
 ## Specify libraries to link a library or executable target against
 target_link_libraries(rovio_audio
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(rovio_av_test
   ${catkin_LIBRARIES}
 )
 
@@ -38,7 +41,7 @@ target_link_libraries(rovio_audio
 #############
 
 ## Mark executables and/or libraries for installation
-install(TARGETS rovio_audio
+install(TARGETS rovio_audio rovio_av_test
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
